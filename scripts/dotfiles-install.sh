@@ -14,7 +14,7 @@ for file in .bashrc .profile .vimrc .gitconfig .ssh/config; do
     mkdir -p ${BACKUPDIR} $(dirname /home/$(whoami)/$file)
     touch $file
     mv $file $BACKUPDIR/
-    curl -q -O https://raw.githubusercontent.com/albertlincoln/dotfiles/master/home/${file}
+    curl -s -O https://raw.githubusercontent.com/albertlincoln/dotfiles/master/home/${file}
 done
 
 
