@@ -1,4 +1,5 @@
-## Download all the files - run like curl "https://raw.githubusercontent.com/albertlincoln/dotfiles/master/scripts/dotfiles-install.sh" | bash
+# Download all the files - run like 
+# url "https://raw.githubusercontent.com/albertlincoln/dotfiles/master/scripts/dotfiles-install.sh" | bash
 
 set -e
 set -x
