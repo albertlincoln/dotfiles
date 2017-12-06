@@ -5,4 +5,4 @@ set -x
 
 cd /home/${whoami}
 
-curl -O https://github.com/albertlincoln/dotfiles/raw/master/home/.gitconfig?token=${TOKEN}
+curl -O https://github.com/albertlincoln/dotfiles/raw/master/home/.gitconfig?token=\${TOKEN}
