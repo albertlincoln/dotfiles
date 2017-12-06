@@ -4,7 +4,7 @@
 set -e
 set -x
 
-cd /home/${whoami}
+cd /home/$(whoami)
 for file in .gitconfig; do
     echo $file
     rm $file
