@@ -7,6 +7,6 @@ set -x
 cd /home/${whoami}
 for file in .gitconfig; do
     echo $file
-    curl -O https://github.com/albertlincoln/dotfiles/raw/master/home/.gitconfig
+    curl -O https://raw.githubusercontent.com/albertlincoln/dotfiles/master/home/.gitconfig
 
 done
