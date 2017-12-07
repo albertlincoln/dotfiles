@@ -1,20 +1,25 @@
 # Download all the files - run like 
 # url "https://raw.githubusercontent.com/albertlincoln/dotfiles/master/scripts/dotfiles-install.sh" | bash
-BACKUPDIR=.dotfile_backups/$(date +%s)
+HOME=/home/$(whoami)
+BACKUPS=${HOME}/.dotfile_backups
+BACKUPDIR=${BACKUPS}/$(date +%s)
+mkdir -p ${BACKUPDIR}
 
-set -e
-set -x
-if [ -x fdupes ]; then
-	cd ~/.BACKUPDIR
-	fdupes -r -N -d ~/.dotfile_backups/ && find ~/.dotfile_backups -empty -delete
+set -ex
+if [ -x $(which fdupes) ]; then
+	fdupes -r -N -d ${BACKUPS}  > ${BACKUPDIR}/cleanup.log 2>&1
+	find ${BACKUPS} -type d -empty -delete
 fi
 
-cd /home/$(whoami)
+set +x
 for file in .bashrc .profile .vimrc .gitconfig .ssh/config; do
-    mkdir -p ${BACKUPDIR} $(dirname /home/$(whoami)/$file)
+    cd ${HOME}
+    echo $file
+    mkdir -p ${BACKUPDIR} $(dirname ${HOME}/$file)
     touch $file
     mv $file $BACKUPDIR/
     curl -s -O https://raw.githubusercontent.com/albertlincoln/dotfiles/master/home/${file}
 done
+set -x
 
 
