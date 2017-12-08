@@ -12,7 +12,8 @@ if [ -x $(which fdupes) ]; then
 fi
 
 set +x
-for file in .bashrc .profile .vimrc .gitconfig .ssh/config; do
+#for file in .bashrc .profile .vimrc .gitconfig .ssh/config ; do
+for file in $(find home -type f | xargs); do
     cd ${HOME}
     echo $file
     mkdir -p ${BACKUPDIR} $(dirname ${HOME}/$file)
