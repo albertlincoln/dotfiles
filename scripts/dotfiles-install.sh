@@ -19,7 +19,7 @@ for file in $(find home -type f | sed "s/^home\///" | xargs); do
     mkdir -p ${BACKUPDIR} $(dirname ${HOME}/$file)
     touch $file
     mv $file $BACKUPDIR/
-    curl -s -O https://raw.githubusercontent.com/albertlincoln/dotfiles/master/home/${file}
+    curl -s -o $file https://raw.githubusercontent.com/albertlincoln/dotfiles/master/home/${file}
 done
 set -x
 
