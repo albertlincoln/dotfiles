@@ -1,0 +1,13 @@
+# Setting variables that reuse your $HOME
+XDG_CACHE_HOME   DEFAULT=@{XDG_RUNTIME_DIR}/.cache
+XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
+XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
+
+# You can reuse XDG_RUNTIME_DIR for runtime files
+ICEAUTHORITY     DEFAULT=${XDG_RUNTIME_DIR}/ICEauthority
+
+# You can reuse variables you already defined
+GNUPGHOME        DEFAULT=${XDG_CONFIG_HOME}/gnupg
+
+# You can define variables as VARIABLE=VALUE pair
+EDITOR=vim
