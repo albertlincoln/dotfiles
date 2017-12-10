@@ -13,7 +13,7 @@ fi
 
 set +x
 #for file in .bashrc .profile .vimrc .gitconfig .ssh/config ; do
-for file in $(); do
+for file in $(curl https://raw.githubusercontent.com/albertlincoln/dotfiles/master/manifests/home.txt | xargs); do
     cd ${HOME}
     echo $file
     mkdir -p ${BACKUPDIR} $(dirname ${HOME}/$file)
