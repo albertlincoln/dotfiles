@@ -5,7 +5,7 @@
 " use the desert256 colorscheme (works better with console than zenburn)
 " colorscheme desert256
 " colorscheme desert
-let g:zenburn_high_Contrast = 1
+" let g:zenburn_high_Contrast = 1
 colorscheme zenburn
 
 
