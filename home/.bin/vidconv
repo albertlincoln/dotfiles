@@ -1,0 +1,49 @@
+#!/bin/bash
+
+AUDIO="-b:a 64k -c:a libvorbis -ac 1 "
+AUDIO="-c:a copy -ac 1 "
+#AUDIO="-an "
+RATE="750k"
+
+DIM="-s 1280x720"
+DIM=""
+DURATION="" # -t 180 "
+
+if [ ! -z $START ] ; then
+    START="" # -ss 60 "
+fi
+
+OPTIONS=$2
+VCODEC="libx264"
+
+MOTION="-filter setpts=0.75*PTS"
+
+avconv $START $OPTIONS -i $1 -vcodec libx264 -pre:v faster $DIM -b:v $RATE $AUDIO $1.mp4
+#
+exit
+#
+#
+#
+nice -n 15 avconv $START $OPTIONS -i $1 -vcodec $VCODEC \
+  -pre:v superfast_firstpass $DIM -b:v $RATE \
+  -pass 1 $DURATION -f rawvideo $AUDIO $OPTIONS -y /dev/null
+
+
+if [ "$?" = "0" ]; then
+  CMD="nice -n 19 avconv $OPTIONS -i $1 -vcodec libvpx -pre:v 720p -b:v $RATE $DIM $AUDIO \
+  $OPTIONS -pass 2 $1.webm"
+
+  CMD="nice -n 19 avconv $START $OPTIONS -i $1 -vcodec $VCODEC -pre:v superfast $DIM -b:v $RATE \
+  -pass 2 $DURATION $AUDIO $MOTION /mnt/ramdisk/$1.mp4"
+
+  echo $CMD
+#  $CMD
+
+#  if [ ! "$?" = "0" ]; then
+#    avconv -i $1 -c:v libvpx -b:v $RATE -r 30 -pass 1 -f rawvideo $OPTIONS -y /dev/null 
+#    avconv -i $1 -c:v libvpx -b:v $RATE $AUDIO -r 30 -pass 2 $OPTIONS -y $1.webm
+#  fi
+fi
+
+
+rm av2pass*.log
