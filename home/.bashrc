@@ -28,12 +28,23 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 
-if [ -d "/tmp/home/all" ] ; then
-    export ALL_TMP_DIR=/tmp/home/all
-    mkdir -p $ALL_TMP_DIR/.cache
-    export XDG_CACHE_HOME=$ALL_TMP_DIR/.cache
-    #HISTFILE=$ALL_TMP_DIR/.bash_history
-    export LESSHISTFILE=$ALL_TMP_DIR/.lesshst
+case ${TERM} in
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    ;;
+esac
+
+if [ -e /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ];
+then
+    echo ""
+    #powerline-daemon -q
+    #POWERLINE_BASH_CONTINUATION=1
+    #POWERLINE_BASH_SELECT=1
+    #. /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
 for i in "aliases" "git-completion" "ssh-completion"; do
