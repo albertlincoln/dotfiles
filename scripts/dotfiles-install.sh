@@ -13,7 +13,7 @@ fi
 
 set +x
 #for file in .bashrc .profile .vimrc .gitconfig .ssh/config ; do
-for file in $(find home -type f | sed "s/^home\///" | xargs); do
+for file in $(); do
     cd ${HOME}
     echo $file
     mkdir -p ${BACKUPDIR} $(dirname ${HOME}/$file)
