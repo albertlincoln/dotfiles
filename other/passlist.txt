@@ -1,6 +1,7 @@
 *.americanexpress.com
 *.bankofamerica.com
 *.capitalone.com
+*.facebook.com
 *.github.com
 *.gmail.com
 *.google.com
