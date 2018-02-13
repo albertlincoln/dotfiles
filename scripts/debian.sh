@@ -5,3 +5,4 @@ sudo apt-get install \
     bash-completion \
     pass \
     iputils-ping \
+    chromium\
