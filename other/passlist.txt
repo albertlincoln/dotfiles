@@ -1,5 +1,10 @@
-accounts.google.com
-github.com
+*.americanexpress.com
+*.bankofamerica.com
+*.capitalone.com
+*.github.com
+*.gmail.com
 *.google.com
-justgetflux.com
 *.multipool.us
+*.reddit.com
+*.verizon.com
+stackoverflow.com
