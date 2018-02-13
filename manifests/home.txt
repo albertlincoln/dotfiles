@@ -7,7 +7,6 @@
 .vim/autoload/.gitkeep
 .vim/plugin/gnupg.vim
 .vim/plugin/.gitkeep
-.pam_environment
 .config/redshift.conf
 .ssh/config
 .hushlogin
