@@ -2,14 +2,16 @@
 # url "https://raw.githubusercontent.com/albertlincoln/dotfiles/master/scripts/dotfiles-install.sh" | bash
 HOME=/home/$(whoami)
 
-set +x
+DIFFERENT=0
 #for file in .bashrc .profile .vimrc .gitconfig .ssh/config ; do
 for file in $(find home -type f | sed "s/^home\///" | xargs); do
     if [ -e ${HOME}/$file ]; then
-        ls ${HOME}/$file
-        diff home/$file ${HOME}/$file
+        diff -q home/$file ${HOME}/$file
+        DIFFERENT=$(($DIFFERENT + $?))
     fi
 done
-set -x
 
+if [ "$DIFFERENT" == "0" ]; then
+    echo "All dotfiles are in sync."
+fi
 
