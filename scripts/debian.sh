@@ -6,3 +6,4 @@ sudo apt-get install \
     pass \
     iputils-ping \
     chromium\
+    fdupes\
