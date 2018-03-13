@@ -5,5 +5,7 @@ sudo apt-get install \
     bash-completion \
     pass \
     iputils-ping \
-    chromium\
+    chromium-browser\
     fdupes\
+    xfonts-terminus\
+    xfonts-terminus-oblique\

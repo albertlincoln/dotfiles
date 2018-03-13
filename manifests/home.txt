@@ -8,6 +8,7 @@
 .vim/plugin/gnupg.vim
 .vim/plugin/.gitkeep
 .config/redshift.conf
+.config/fontconfig/fonts.conf
 .ssh/config
 .hushlogin
 .vimrc
