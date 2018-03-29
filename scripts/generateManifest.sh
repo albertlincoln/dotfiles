@@ -1,1 +1,1 @@
-find ./home -type f -printf "%P\n\r"
+find ./home -type f -printf "%P\n"  | more
