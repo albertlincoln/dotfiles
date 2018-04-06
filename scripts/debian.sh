@@ -9,3 +9,5 @@ sudo apt-get install \
     fdupes\
     xfonts-terminus\
     xfonts-terminus-oblique\
+    ntp\
+    tuned\

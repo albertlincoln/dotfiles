@@ -1,1 +1,1 @@
-find ./home -type f -printf "%P\n"  | more
+find ./home -type f -printf "%P\n"  | grep -v ^.bin | sort
