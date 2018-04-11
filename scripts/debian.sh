@@ -11,3 +11,5 @@ sudo apt-get install \
     xfonts-terminus-oblique\
     ntp\
     tuned\
+    firmware-linux\
+    intel-microcode\
