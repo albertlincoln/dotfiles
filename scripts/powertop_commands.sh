@@ -1,7 +1,3 @@
-#!/bin/bash
-
-exit 0
-
 echo '1' > '/sys/module/snd_hda_intel/parameters/power_save'
 echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs'
 echo 'min_power' > '/sys/class/scsi_host/host0/link_power_management_policy'
