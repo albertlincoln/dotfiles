@@ -44,22 +44,6 @@ if [ -e '/sys/bus/i2c/devices/i2c-1/device/power/control' ]; then
   echo 'auto' > '/sys/bus/i2c/devices/i2c-1/device/power/control'
   echo "echo 'auto' > '/sys/bus/i2c/devices/i2c-1/device/power/control'"
 fi
-if [ -e '/sys/bus/usb/devices/3-4/power/control' ]; then
-  echo 'auto' > '/sys/bus/usb/devices/3-4/power/control'
-  echo "echo 'auto' > '/sys/bus/usb/devices/3-4/power/control'"
-fi
-if [ -e '/sys/bus/usb/devices/1-1.1/power/control' ]; then
-  echo 'auto' > '/sys/bus/usb/devices/1-1.1/power/control'
-  echo "echo 'auto' > '/sys/bus/usb/devices/1-1.1/power/control'"
-fi
-if [ -e '/sys/bus/usb/devices/4-1/power/control' ]; then
-  echo 'auto' > '/sys/bus/usb/devices/4-1/power/control'
-  echo "echo 'auto' > '/sys/bus/usb/devices/4-1/power/control'"
-fi
-if [ -e '/sys/bus/usb/devices/3-3/power/control' ]; then
-  echo 'auto' > '/sys/bus/usb/devices/3-3/power/control'
-  echo "echo 'auto' > '/sys/bus/usb/devices/3-3/power/control'"
-fi
 if [ -e '/sys/bus/i2c/devices/i2c-3/device/power/control' ]; then
   echo 'auto' > '/sys/bus/i2c/devices/i2c-3/device/power/control'
   echo "echo 'auto' > '/sys/bus/i2c/devices/i2c-3/device/power/control'"
