@@ -82,3 +82,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
+  mkdir -p $XDG_RUNTIME_DIR/vim
+fi
+
+if [ ! -e ~/.vim-tmp ]; then
+    ln -s $XDG_RUNTIME_DIR/vim ~/.vim-tmp
+fi
+
