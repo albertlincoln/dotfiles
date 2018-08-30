@@ -28,7 +28,7 @@ fi
 color_prompt=yes
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -84,11 +84,11 @@ fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
+if [ -n "$XDG_RUNTIME_DIR" ] && [ ! -d $XDG_RUNTIME_DIR/vim ]; then
   mkdir -p $XDG_RUNTIME_DIR/vim
 fi
 
-if [ ! -e ~/.vim-tmp ]; then
+if [ -n "$XDG_RUNTIME_DIR" ] && [ ! -e ~/.vim-tmp ]; then
     ln -s $XDG_RUNTIME_DIR/vim ~/.vim-tmp
 fi
 
