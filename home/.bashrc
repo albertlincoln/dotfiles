@@ -36,9 +36,9 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
 
 GPG_TTY=`tty` 
 export GPG_TTY 
@@ -84,11 +84,21 @@ fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-if [ -n "$XDG_RUNTIME_DIR" ] && [ ! -d $XDG_RUNTIME_DIR/vim ]; then
-  mkdir -p $XDG_RUNTIME_DIR/vim
+if [ -n "$XDG_RUNTIME_DIR" ]; then
+    export XDG_RUNTIME_DIR=/run/user
 fi
 
-if [ -n "$XDG_RUNTIME_DIR" ] && [ ! -e ~/.vim-tmp ]; then
+if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
+    mkdir -p $XDG_RUNTIME_DIR/vim
+fi
+
+if [ ! -e ~/.vim-tmp ]; then
     ln -s $XDG_RUNTIME_DIR/vim ~/.vim-tmp
+fi
+
+pgrep Xorg 2>&1 > /dev/null
+
+if [ ! "$?" = "0" ]; then
+    eval `keychain --eval -q`
 fi
 
