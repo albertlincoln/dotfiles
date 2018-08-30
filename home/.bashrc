@@ -84,8 +84,8 @@ fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-if [ -n "$XDG_RUNTIME_DIR" ]; then
-    export XDG_RUNTIME_DIR=/run/user
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    export XDG_RUNTIME_DIR=/run/shm
 fi
 
 if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
@@ -99,6 +99,6 @@ fi
 pgrep Xorg 2>&1 > /dev/null
 
 if [ ! "$?" = "0" ]; then
-    eval `keychain --eval -q`
+    eval `ls ~/.ssh/*.pub | sed s/.pub//g | xargs ls | xargs keychain --eval -q`
 fi
 
