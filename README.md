@@ -1,3 +1,6 @@
 README
 
-# curl "https://raw.githubusercontent.com/albertlincoln/dotfiles/master/scripts/dotfiles-install.sh" | bash
+
+curl https://git.io/fAxKl | bash
+
+If you really want to do this, set DOTOFILES=GO
