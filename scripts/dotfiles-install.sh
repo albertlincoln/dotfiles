@@ -10,7 +10,13 @@ if [ ! "$DOTFILES_DECISION" = "GO" ]; then
 fi
 
 HOMEDIR=/home/$(whoami)
+ORIGIN_REPO=git@github.com:albertlincoln/dotfiles.git
 LOCAL_REPO=$HOMEDIR/src/dotfiles
+if [ ! -d $LOCAL_REPO/.git ]; then
+    mkdir -p $HOMEDIR/src
+    git clone $ORIGIN_REPO
+fi
+
 BACKUPS="${LOCAL_REPO}/backups/$(whoami).$(hostname -s)"
 CURTIME=$(date ${DATE} '+%Y-%m-%d.%H-%M-%S')
 BACKUPDIR=${BACKUPS}/$CURTIME
@@ -41,5 +47,7 @@ for file in $(curl -s ${MY_REPO_DIR}/manifests/home.txt | xargs); do
         echo ""
     fi
 done
+
+find $BACKUPDIR -empty -delete
 
 
