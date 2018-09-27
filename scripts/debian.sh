@@ -24,15 +24,27 @@ check_packages \
     pass \
     iputils-ping \
     fdupes\
-    seahorse-daemon\
 
-exit
+
 
 # only try to install these if acpid / Xorg are running
-    firmware-linux\
-    intel-microcode\
-    tuned\
-    ntp\
-    xfonts-terminus\
-    xfonts-terminus-oblique\
-    powertop\
+pgrep Xorg 2>&1 > /dev/null
+
+if [  "$?" = "0" ]; then
+
+    check_packages \
+        seahorse-daemon\
+        firmware-linux\
+        intel-microcode\
+        tuned\
+        ntp\
+        xfonts-terminus\
+        xfonts-terminus-oblique\
+        powertop\
+
+else
+
+    check_packages \
+        keychain\
+
+fi
