@@ -36,9 +36,9 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#    . /etc/bash_completion
-#fi
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
 
 GPG_TTY=`tty` 
 export GPG_TTY 
@@ -85,7 +85,8 @@ fi
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 if [ -z "$XDG_RUNTIME_DIR" ]; then
-    export XDG_RUNTIME_DIR=/run/shm
+    mkdir -p /run/shm/$(id -u)
+    export XDG_RUNTIME_DIR=/run/shm/$(id -u)
 fi
 
 if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
