@@ -6,22 +6,18 @@ fi
 
 if [ ! "$DOTFILES_DECISION" = "GO" ]; then
     echo "If you really want to do this, set DOTFILES_DECISION=GO"
+    exit
 fi
 
-HOME=/home/$(whoami)
-BACKUPS=${HOME}/.dotfile_backups
-BACKUPDIR=${BACKUPS}/$(date ${DATE} '+%Y-%m-%d.%H-%M-%S')
-BACKUPLOG=${BACKUPS}/logs/$(date ${DATE} '+%Y-%m-%d.%H-%M-%S')-cleanup.log
+HOMEDIR=/home/$(whoami)
+LOCAL_REPO=$HOMEDIR/src/dotfiles
+BACKUPS="${LOCAL_REPO}/backups/$(whoami).$(hostname -s)"
+CURTIME=$(date ${DATE} '+%Y-%m-%d.%H-%M-%S')
+BACKUPDIR=${BACKUPS}/$CURTIME
+BACKUPLOG=${BACKUPS}/logs/$CURTIME-cleanup.log
 MY_REPO_DIR="https://raw.githubusercontent.com/albertlincoln/dotfiles/master"
 mkdir -p ${BACKUPDIR}
 mkdir -p ${BACKUPS}/logs
-
-
-which fdupes > /dev/null
-if [ "$?" == "0" ]; then
-	fdupes -r -N -d ${BACKUPS} > ${BACKUPLOG} 2>&1
-	find ${BACKUPS} -type d -empty -delete
-fi
 
 which curl > /dev/null
 if [ "$?" != "0" ]; then
