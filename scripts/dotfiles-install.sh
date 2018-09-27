@@ -1,5 +1,5 @@
 # Download all the files - run like 
-# `curl https://git.io/fAxKl | bash`
+# `curl -L https://git.io/fAxKl | bash`
 if [ "$DOTFILES_VERBOSE" = "true" ]; then
     set -ex
 fi
