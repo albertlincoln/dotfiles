@@ -13,7 +13,9 @@ HOMEDIR=/home/$(whoami)
 ORIGIN_REPO=git@github.com:albertlincoln/dotfiles.git
 LOCAL_REPO=$HOMEDIR/src/dotfiles
 if [ ! -d $LOCAL_REPO/.git ]; then
+    echo "Cloning repo"
     mkdir -p $HOMEDIR/src
+    cd $HOMEDIR/src
     git clone $ORIGIN_REPO
 fi
 
@@ -34,6 +36,7 @@ fi
 cd ${HOME}
 for file in $(curl -s ${MY_REPO_DIR}/manifests/home.txt | xargs); do
     mkdir -p ${BACKUPDIR}/$(dirname $file)
+    mkdir -p $(dirname $file)
     touch -a $file
     cp $file $BACKUPDIR/$file
     curl -s -o $file $MY_REPO_DIR/home/${file}
