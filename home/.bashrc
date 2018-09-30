@@ -97,9 +97,9 @@ if [ ! -e ~/.vim-tmp ]; then
     ln -s $XDG_RUNTIME_DIR/vim ~/.vim-tmp
 fi
 
-pgrep Xorg 2>&1 > /dev/null
+which keychain > /dev/null 2>&1
 
-if [ ! "$?" = "0" ]; then
+if [ "$?" = "0" ] &&  [ "$DISPLAY" = "" ]; then
     eval `ls ~/.ssh/*.pub | sed s/.pub//g | xargs ls | xargs keychain --eval -q`
 fi
 
