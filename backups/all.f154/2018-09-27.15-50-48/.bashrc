@@ -84,22 +84,11 @@ fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-if [ -z "$XDG_RUNTIME_DIR" ]; then
-    mkdir -p /run/shm/$(id -u)
-    export XDG_RUNTIME_DIR=/run/shm/$(id -u)
+if [ -n "$XDG_RUNTIME_DIR" ] && [ ! -d $XDG_RUNTIME_DIR/vim ]; then
+  mkdir -p $XDG_RUNTIME_DIR/vim
 fi
 
-if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
-    mkdir -p $XDG_RUNTIME_DIR/vim
-fi
-
-if [ ! -e ~/.vim-tmp ]; then
+if [ -n "$XDG_RUNTIME_DIR" ] && [ ! -e ~/.vim-tmp ]; then
     ln -s $XDG_RUNTIME_DIR/vim ~/.vim-tmp
-fi
-
-which keychain > /dev/null 2>&1
-
-if [ "$?" = "0" ] &&  [ "$DISPLAY" = "" ]; then
-    eval `ls ~/.ssh/*.pub | sed s/.pub//g | xargs ls | xargs keychain --eval -q`
 fi
 
