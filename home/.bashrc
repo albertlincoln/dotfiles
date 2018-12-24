@@ -82,7 +82,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+if [ -d "$HOME/n" ]; then
+    export N_PREFIX="$HOME/n";
+elif [ -d "/opt/n" ]; then
+    export N_PREFIX="/opt/n";
+fi
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     mkdir -p /run/shm/$(id -u)
@@ -103,3 +108,6 @@ if [ "$?" = "0" ] &&  [ "$DISPLAY" = "" ]; then
     eval `ls ~/.ssh/*.pub | sed s/.pub//g | xargs ls | xargs keychain --eval -q`
 fi
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
