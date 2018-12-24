@@ -10,3 +10,5 @@ alias tailsys='tail /var/log/syslog -f -n 100'
 alias gitinfo='git annex info --fast *'
 
 alias dpkgpurge="dpkg -l | grep ^rc | awk '{print $2}' | xargs sudo dpkg -P"
+
+alias dmesg="sudo dmesg"
