@@ -1,10 +1,10 @@
 [Configuration]
-FontName=Terminus 20
+FontName=Noto Mono 10
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
 MiscBordersDefault=FALSE
-MiscCursorBlinks=FALSE
+MiscCursorBlinks=TRUE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=100x30
 MiscInheritGeometry=FALSE
@@ -19,7 +19,7 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 MiscMiddleClickOpensUri=FALSE
-MiscCopyOnSelect=FALSE
+MiscCopyOnSelect=TRUE
 MiscDefaultWorkingDir=
 MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
@@ -32,4 +32,8 @@ ScrollingOnOutput=FALSE
 FontAllowBold=FALSE
 ColorCursor=#dcdcdc
 ColorPalette=rgb(63,63,63);rgb(141,86,86);rgb(59,130,96);rgb(223,175,143);rgb(154,184,215);rgb(220,140,195);rgb(140,208,211);rgb(220,220,220);rgb(85,145,115);rgb(220,163,163);rgb(114,213,163);rgb(240,223,175);rgb(148,191,243);rgb(236,147,211);rgb(147,224,227);rgb(255,255,255)
+ScrollingUnlimited=TRUE
+TextBlinkMode=TERMINAL_TEXT_BLINK_MODE_NEVER
+MiscShowRelaunchDialog=TRUE
+MiscNewTabAdjacent=FALSE
 

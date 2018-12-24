@@ -21,18 +21,4 @@ fi
 if [ -d "$HOME/.all/bin" ] ; then
     PATH="$HOME/.all/bin:$PATH"
 fi
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
 
-#if [ -x /usr/bin/synclient ]; then
-#    synclient TapButton1=1
-#fi
-
-if [ -f $HOME/.all/bin/keychain ]; then
-
-    eval `keychain --agents ssh --eval id_rsa`
-   # $HOME/.all/bin/keychain .ssh/id_rsa
-#    . ./.keychain/$HOSTNAME-sh
-#    eval `keychain --agents ssh --eval id_rsa`
-fi
