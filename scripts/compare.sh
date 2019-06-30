@@ -1,7 +1,9 @@
 # Download all the files - run like 
 # url "https://raw.githubusercontent.com/albertlincoln/dotfiles/master/scripts/dotfiles-install.sh" | bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 HOME=/home/$(whoami)
 
+cd $DIR/../
 DIFFERENT=0
 #for file in .bashrc .profile .vimrc .gitconfig .ssh/config ; do
 for file in $(find home -type f | sed "s/^home\///" | xargs); do
