@@ -104,10 +104,21 @@ fi
 
 which keychain > /dev/null 2>&1
 
-if [ "$?" = "0" ] &&  [ "$DISPLAY" = "" ]; then
+if [ "$?" = "0" ] && [ "$DISPLAY" = "" ]; then
     eval `ls ~/.ssh/*.pub | sed s/.pub//g | xargs ls | xargs keychain --eval -q`
 fi
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+is_wsl=0
+read os </proc/sys/kernel/osrelease || :
+if [[ "$os" == *Microsoft ]]; then
+      is_wsl=1
+fi
+
+if [ "$SHLVL" = "1" ] && [ "$is_wsl" = "1" ]; then
+    export TERM=vwmterm
+fi
+

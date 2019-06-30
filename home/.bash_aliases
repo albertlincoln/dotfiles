@@ -12,3 +12,5 @@ alias gitinfo='git annex info --fast *'
 alias dpkgpurge="dpkg -l | grep ^rc | awk '{print $2}' | xargs sudo dpkg -P"
 
 alias dmesg="sudo dmesg"
+
+alias tmux='tmux -2'
