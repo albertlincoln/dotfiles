@@ -1,0 +1,35 @@
+{
+    "packagesets": {
+        "dpkg": {
+            "requires": "dpkg",
+            "install": [
+                "vim-addon-manager",
+                "vim-nox",
+                "vim-scripts",
+                "bash-completion",
+                "pass",
+                "detox",
+                "iputils-ping",
+                "keychain",
+                "fdupes"
+            ]
+        },
+        "xorg": {
+            "requires": "xorg",
+            "install": [
+                "seahorse-daemon",
+                "firmware-linux",
+                "intel-microcode",
+                "chromium-browser",
+                "tuned",
+                "ntp",
+                "xfonts-terminus",
+                "xfonts-terminus-oblique",
+                "powertop"
+            ],
+            "uninstall": [
+                "keychain"
+            ]
+        }
+    }
+}
