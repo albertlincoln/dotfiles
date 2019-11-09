@@ -23,6 +23,8 @@ check_packages \
     bash-completion \
     pass \
     iputils-ping \
+    dnsutils \
+    usbutils \
     fdupes\
 
 
