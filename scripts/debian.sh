@@ -45,6 +45,7 @@ if [  "$?" = "0" ]; then
         xfonts-terminus-oblique\
         powertop\
         xfconf\
+        mpv\
 
 
     vim-addon-manager install colors-sampler-pack
