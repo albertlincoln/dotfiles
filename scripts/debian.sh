@@ -25,7 +25,8 @@ check_packages \
     iputils-ping \
     dnsutils \
     usbutils \
-    fdupes\
+    fdupes \
+    profile-sync-daemon \
 
 
 
