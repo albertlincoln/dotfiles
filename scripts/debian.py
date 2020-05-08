@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.7
 import sys
 import os
 import json
@@ -6,7 +6,7 @@ import json
 try:
     import apt
 except:
-    os.system("sudo apt-get install -y python-apt")
+    os.system("sudo apt-get install -y python3-apt")
     import apt
 
 aptCache = apt.Cache()

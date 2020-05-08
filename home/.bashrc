@@ -40,8 +40,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-GPG_TTY=`tty` 
-export GPG_TTY 
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -118,7 +116,12 @@ if [[ "$os" == *Microsoft ]]; then
       is_wsl=1
 fi
 
-if [ "$SHLVL" = "1" ] && [ "$is_wsl" = "1" ]; then
-    export TERM=vwmterm
+GPG_TTY=`tty` 
+if [ "$SHLVL" = "1" ]; then
+    export GPG_TTY 
 fi
+
+#if [ "$SHLVL" = "1" ] && [ "$is_wsl" = "1" ]; then
+#    export TERM=vwmterm
+#fi
 
