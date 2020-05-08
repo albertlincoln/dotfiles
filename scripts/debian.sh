@@ -23,7 +23,10 @@ check_packages \
     bash-completion \
     pass \
     iputils-ping \
-    fdupes\
+    dnsutils \
+    usbutils \
+    fdupes \
+    profile-sync-daemon \
 
 
 
@@ -42,6 +45,10 @@ if [  "$?" = "0" ]; then
         xfonts-terminus\
         xfonts-terminus-oblique\
         powertop\
+        xfconf\
+
+
+    vim-addon-manager install colors-sampler-pack
 
 else
 
