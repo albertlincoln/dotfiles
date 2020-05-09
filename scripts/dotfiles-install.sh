@@ -18,7 +18,7 @@ if [ ! -d $LOCAL_REPO/.git ]; then
     cd $HOMEDIR/src
     git clone $ORIGIN_REPO
 else
-    cd $HOMEDIR/src/$ORIGIN_REPO
+    cd $LOCAL_REPO
     git pull
 
 fi
