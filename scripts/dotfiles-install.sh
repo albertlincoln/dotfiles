@@ -1,7 +1,7 @@
 # Download all the files - run like 
 # `curl -L https://git.io/fAxKl | bash`
 if [ "$DOTFILES_VERBOSE" = "true" ]; then
-    set -ex
+    set -euxo pipefail
 fi
 
 if [ ! "$DOTFILES_DECISION" = "GO" ]; then
@@ -24,7 +24,7 @@ else
 fi
 
 BACKUPS="${LOCAL_REPO}/backups/$(whoami).$(hostname -s)"
-CURTIME=$(date ${DATE} '+%Y-%m-%d.%H-%M-%S')
+CURTIME=$(date '+%Y-%m-%d.%H-%M-%S')
 BACKUPDIR=${BACKUPS}/$CURTIME
 BACKUPLOG=${BACKUPS}/logs/$CURTIME-cleanup.log
 MY_REPO_DIR="https://raw.githubusercontent.com/albertlincoln/dotfiles/master"
@@ -49,7 +49,7 @@ for file in $(curl -s ${MY_REPO_DIR}/manifests/home.txt | xargs); do
         rm $BACKUPDIR/$file
     fi
     if [ "$DOTFILES_VERBOSE" = "true" ]; then
-        sleep ${DOTFILES_SLEEP:=2}
+        sleep ${DOTFILES_SLEEP:=1}
         echo ""
         echo ""
     fi
