@@ -80,13 +80,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -d "$HOME/n" ]; then
-    export N_PREFIX="$HOME/n";
-elif [ -d "/opt/n" ]; then
-    export N_PREFIX="/opt/n";
-fi
-[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     mkdir -p /run/shm/$(id -u)
     export XDG_RUNTIME_DIR=/run/shm/$(id -u)
