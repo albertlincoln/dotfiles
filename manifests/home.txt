@@ -2,7 +2,7 @@
 .bashrc
 .config/fontconfig/fonts.conf
 .config/psd/psd.conf
-.config/tmuxline.conf
+.config/tmuxline.tmux
 .config/redshift.conf
 .config/xfce4/terminal/terminalrc
 .dircolors
