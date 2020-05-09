@@ -10,6 +10,7 @@
 .inputrc
 .profile
 .ssh/config
+.tmux.conf
 .vim/autoload/.gitkeep
 .vim/config/display.vim
 .vim/config/editing.vim
