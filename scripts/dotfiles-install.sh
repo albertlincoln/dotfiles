@@ -38,13 +38,14 @@ if [ "$?" != "0" ]; then
 fi
 
 cd ${HOME}
-for file in $(curl -s ${MY_REPO_DIR}/manifests/home.txt | xargs); do
+FILES2PROC=$(curl -s ${MY_REPO_DIR}/manifests/home.txt | xargs)
+for file in ${DOTFILE2PROC:-$FILES2PROC}:; do
     mkdir -p ${BACKUPDIR}/$(dirname $file)
     mkdir -p $(dirname $file)
     touch -a $file
     cp $file $BACKUPDIR/$file
     curl -s -o $file $MY_REPO_DIR/home/${file}
-    diff $BACKUPDIR/$file $file 2>&1 > /dev/null
+    diff -q $BACKUPDIR/$file $HOME/$file
     if [ "$?" = "0" ]; then
         rm $BACKUPDIR/$file
     fi
