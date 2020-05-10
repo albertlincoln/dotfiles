@@ -8,7 +8,8 @@ esac
 HISTCONTROL=erasedups:ignorespace
 HISTIGNORE='??'
 HISTSIZE=500
-HISTFILESIZE=10000
+#HISTFILESIZE=10000
+export HISTFILE=/dev/null
 
 export EDITOR=vim
 
@@ -113,8 +114,3 @@ GPG_TTY=`tty`
 if [ "$SHLVL" = "1" ]; then
     export GPG_TTY 
 fi
-
-#if [ "$SHLVL" = "1" ] && [ "$is_wsl" = "1" ]; then
-#    export TERM=vwmterm
-#fi
-
