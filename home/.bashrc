@@ -26,9 +26,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 color_prompt=yes
-
+operating_system_id=`cat /etc/os-release | grep ^ID= | cut -d'=' -f 2`
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h/${operating_system_id}:\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]߆ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -79,6 +79,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+if [ -d "$HOME/n" ]; then
+    export N_PREFIX="$HOME/n";
+elif [ -d "/opt/n" ]; then
+    export N_PREFIX="/opt/n";
+fi
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     mkdir -p /run/shm/$(id -u)
