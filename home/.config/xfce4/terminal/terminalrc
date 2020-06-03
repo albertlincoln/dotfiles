@@ -1,5 +1,5 @@
 [Configuration]
-FontName=Noto Mono 10
+FontName=Noto Sans Mono 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -36,4 +36,8 @@ ScrollingUnlimited=TRUE
 TextBlinkMode=TERMINAL_TEXT_BLINK_MODE_NEVER
 MiscShowRelaunchDialog=TRUE
 MiscNewTabAdjacent=FALSE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
+CellHeightScale=1.100000
+CellWidthScale=1.100000
 

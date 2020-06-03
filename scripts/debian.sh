@@ -39,7 +39,6 @@ if [  "$?" = "0" ]; then
         seahorse-daemon\
         firmware-linux\
         intel-microcode\
-        chromium-browser\
         tuned\
         ntp\
         xfonts-terminus\
