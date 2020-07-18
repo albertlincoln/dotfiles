@@ -35,8 +35,9 @@ filetype off
 
 let xml_tag_completion_map = "<C-l>"
 " use pathogen to load plugins/etc.
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#infect()
+" call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+let g:tmuxline_powerline_separators = 1
 
 
 " turn on all filetype settings, syntax, etc.
