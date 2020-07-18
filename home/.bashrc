@@ -7,9 +7,13 @@ esac
 # ... or force ignoredups and ignorespace
 HISTCONTROL=erasedups:ignorespace
 HISTIGNORE='??'
-HISTSIZE=500
-#HISTFILESIZE=10000
-export HISTFILE=/dev/null
+#HISTSIZE=500
+HISTFILESIZE=10000
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    mkdir -p /run/shm/$(id -u)
+    export XDG_RUNTIME_DIR=/run/shm/$(id -u)
+fi
+export HISTFILE=$XDG_RUNTIME_DIR/.history
 
 export EDITOR=vim
 
@@ -29,7 +33,7 @@ fi
 color_prompt=yes
 operating_system_id=`cat /etc/os-release | grep ^ID= | cut -d'=' -f 2`
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h/${operating_system_id}:\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]߆ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\h/${operating_system_id}:\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]: ⦕  '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -88,10 +92,6 @@ elif [ -d "/opt/n" ]; then
 fi
 [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-if [ -z "$XDG_RUNTIME_DIR" ]; then
-    mkdir -p /run/shm/$(id -u)
-    export XDG_RUNTIME_DIR=/run/shm/$(id -u)
-fi
 
 if [ ! -d $XDG_RUNTIME_DIR/vim ]; then
     mkdir -p $XDG_RUNTIME_DIR/vim
@@ -109,12 +109,6 @@ fi
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
-fi
-
-is_wsl=0
-read os </proc/sys/kernel/osrelease || :
-if [[ "$os" == *Microsoft ]]; then
-      is_wsl=1
 fi
 
 GPG_TTY=`tty` 
