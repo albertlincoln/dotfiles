@@ -11,9 +11,7 @@ except:
 
 aptCache = apt.Cache()
 
-dirname = os.path.dirname(os.path.join(os.getcwd(), 'scripts/debian.py'))
-
-package_path = os.path.join(dirname, "packages.json")
+package_path = os.path.join(os.path.dirname(__file__), "packages.json")
 #cat /proc/version | grep Microsoft 2>&1 >  /dev/null ; echo $?
 
 packages = {}

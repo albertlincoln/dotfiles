@@ -11,6 +11,8 @@
                 "detox",
                 "iputils-ping",
                 "keychain",
+                "rsync",
+                "psmisc",
                 "fdupes"
             ]
         },
