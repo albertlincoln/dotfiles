@@ -1,0 +1,6 @@
+[
+  { "key": "ctrl+`", "command": "workbench.action.terminal.focus"},
+  { "key": "ctrl+`", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
+  { "key": "cmd+shift+j", "command": "workbench.action.terminal.focusNext" },
+  { "key": "cmd+shift+k", "command": "workbench.action.terminal.focusPrevious" }
+]
