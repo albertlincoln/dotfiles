@@ -26,6 +26,7 @@
                 "tuned",
                 "ntp",
                 "xfonts-terminus",
+                "kitty",
                 "xfonts-terminus-oblique",
                 "powertop"
             ],
