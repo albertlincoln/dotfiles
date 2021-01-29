@@ -37,7 +37,8 @@ for file in ${DOTFILE2PROC:-$FILES2PROC}:; do
     mkdir -p $(dirname $file)
     touch -a $file
     cp $file $BACKUPDIR/$file
-    #curl -s -o $file $MY_REPO_DIR/home/${file}
+    # this saves the file
+    curl -s -o ${HOME}/$file $MY_REPO_DIR/home/${file}
 
     diff -q $BACKUPDIR/$file $HOME/$file
     if [ "$?" = "0" ]; then

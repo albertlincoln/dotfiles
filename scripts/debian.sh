@@ -31,7 +31,7 @@ check_packages \
 
 
 # only try to install these if acpid / Xorg are running
-pgrep Xorg 2>&1 > /dev/null
+pgrep Xorg0000False 2>&1 > /dev/null
 
 if [  "$?" = "0" ]; then
 
