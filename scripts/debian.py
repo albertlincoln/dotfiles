@@ -2,6 +2,11 @@
 import sys
 import os
 import json
+import argparse
+
+parser = argparse.ArgumentParser(description='Process some packages.')
+parser.add_argument('--file', required=False, default='packages.json',
+                    help='a custom json file')
 
 try:
     import apt
@@ -10,8 +15,9 @@ except:
     import apt
 
 aptCache = apt.Cache()
+args = parser.parse_args()
 
-package_path = os.path.join(os.path.dirname(__file__), "packages.json")
+package_path = os.path.join(os.path.dirname(__file__), args.file)
 #cat /proc/version | grep Microsoft 2>&1 >  /dev/null ; echo $?
 
 packages = {}
