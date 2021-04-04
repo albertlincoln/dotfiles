@@ -13,6 +13,7 @@
 .ssh/config
 .tmux.conf
 .vim/autoload/.gitkeep
+.vim/colors/zenburn.vim
 .vim/config/display.vim
 .vim/config/editing.vim
 .vim/config/tempfiles.vim

@@ -3,7 +3,7 @@ import sys
 import os
 import json
 import argparse
-import subprocess
+from subprocess import call
 
 parser = argparse.ArgumentParser(description='Process some packages.')
 parser.add_argument('--file', required=False, default='packages.json',
@@ -22,4 +22,7 @@ with open(package_path) as f:
     for required_key in jsondata["packagesets"]:
         install = jsondata["packagesets"][required_key]["install"]
         for i in range(len(install)):
-            subprocess.call(f"pacman -S --needed --noconfirm {install[i]}")
+            try:
+                call(["sudo", "pacman", "-Sy", "--needed", "--noconfirm", install[i]])
+            except Exception as e:
+                print(e)
