@@ -43,3 +43,5 @@ with open(package_path) as f:
             else:
                 print("Nothing to install")
 
+
+os.system("sudo ./scripts/debian.sh")
