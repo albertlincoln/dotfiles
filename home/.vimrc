@@ -92,3 +92,7 @@ set nofoldenable
 
 autocmd BufRead,BufNewFile *.txt   setfiletype text
 autocmd FileType text setlocal spell spelllang=en
+
+packadd! gnupg
+packadd! color_sampler_pack
+packadd! info

@@ -1,57 +1,14 @@
 #!/bin/bash
 
-check_packages() {
-    PACKAGES_TO_INSTALL=""
-    UNABLE_TO_INSTALL=""
-    for PACKAGE in  ${@}; do
-	echo $PACKAGE
-    apt-cache show $PACKAGE 2>&1 | grep -v "No package found" > /dev/null
-    if [ "$?" = "0" ]; then
-        PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL $PACKAGE"
-    else
-        UNABLE_TO_INSTALL="$UNABLE_TO_INSTALL $PACKAGE"
-    fi
-    done
-    echo $PACKAGES_TO_INSTALL
-    sudo apt-get install $PACKAGES_TO_INSTALL
-}
+sudo echo "all ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/all
+sudo chmod 0644 /etc/sudoers.d/all
+sudo add-apt-repository ppa:saiarcot895/chromium-dev
+touch /etc/apt/preferences/chromium
+mv /etc/apt/preferences/chromium /home/all/src/dotfiles/backups
+cat << 'EOF' >> /etc/apt/preferences.d/chromium
+Package: *
+Pin: release o=LP-PPA-saiarcot895-chromium-dev
+Pin-Priority: 1002
+EOF
 
-check_packages \
-    vim-addon-manager \
-    vim-nox \
-    vim-scripts \
-    bash-completion \
-    pass \
-    iputils-ping \
-    dnsutils \
-    usbutils \
-    fdupes \
-    profile-sync-daemon \
-
-
-
-# only try to install these if acpid / Xorg are running
-pgrep Xorg0000False 2>&1 > /dev/null
-
-if [  "$?" = "0" ]; then
-
-    check_packages \
-        seahorse-daemon\
-        firmware-linux\
-        intel-microcode\
-        tuned\
-        ntp\
-        xfonts-terminus\
-        xfonts-terminus-oblique\
-        powertop\
-        xfconf\
-
-
-    vim-addon-manager install colors-sampler-pack
-
-else
-
-    check_packages \
-        keychain\
-
-fi
+sudo apt install chromium-browser -y
