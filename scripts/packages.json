@@ -13,6 +13,9 @@
                 "keychain",
                 "rsync",
                 "psmisc",
+                "profile-sync-daemon",
+                "nmap",
+                "tmux",
                 "fdupes"
             ]
         },
@@ -22,12 +25,12 @@
                 "seahorse-daemon",
                 "firmware-linux",
                 "intel-microcode",
-                "chromium-browser",
                 "tuned",
                 "ntp",
                 "xfonts-terminus",
                 "kitty",
                 "xfonts-terminus-oblique",
+                "xtightvncviewer",
                 "powertop"
             ],
             "uninstall": [

@@ -7,6 +7,7 @@
 *.capitalone360.com
 *.coinbase.com
 *.computershare.com
+*.cygnaenvoy.com
 *.digitalocean.com
 *.dyn.com
 *.dynadot.com
@@ -23,10 +24,12 @@
 *.penfed.org
 *.reddit.com
 *.santanderbank.com
-stackoverflow.com
+*.stackoverflow.com
 *.target.com
 *.topcashback.com
 *.united.com
+*.usaa.com
 *.verizon.com
 *.verizon.net
 *.vzw.com
+
