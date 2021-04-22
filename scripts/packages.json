@@ -13,6 +13,9 @@
                 "keychain",
                 "rsync",
                 "psmisc",
+                "profile-sync-daemon",
+                "nmap",
+                "tmux",
                 "fdupes"
             ]
         },
@@ -28,6 +31,7 @@
                 "xfonts-terminus",
                 "kitty",
                 "xfonts-terminus-oblique",
+                "xtightvncviewer",
                 "powertop"
             ],
             "uninstall": [
