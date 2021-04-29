@@ -1,0 +1,76 @@
+ii  fonts-beng                            2:1.3                                                                all          Metapackage to install Bengali and Assamese fonts
+ii  fonts-beng-extra                      1.0-7                                                                all          TrueType fonts for Bengali language
+ii  fonts-gargi                           2.0-5                                                                all          OpenType Devanagari font
+ii  fonts-gubbi                           1.3-5build1                                                          all          Gubbi free font for Kannada script
+ii  fonts-gujr                            2:1.4                                                                all          Meta package to install all Gujarati fonts
+ii  fonts-gujr-extra                      1.0.1-1                                                              all          Free fonts for Gujarati script
+ii  fonts-guru                            2:1.3                                                                all          Meta package to install all Punjabi fonts
+ii  fonts-guru-extra                      2.0-5                                                                all          Free fonts for Punjabi language
+ii  fonts-indic                           2:1.4                                                                all          Meta package to install all Indian language fonts
+ii  fonts-kacst                           2.01+mry-15                                                          all          KACST free TrueType Arabic fonts
+ii  fonts-kacst-one                       5.0+svn11846-10                                                      all          TrueType font designed for Arabic language
+ii  fonts-kalapi                          1.0-4                                                                all          Kalapi Gujarati Unicode font
+ii  fonts-khmeros-core                    5.0-7.1ubuntu2                                                       all          KhmerOS Unicode fonts for the Khmer language of Cambodia
+ii  fonts-knda                            2:1.3                                                                all          Meta package for Kannada fonts
+ii  fonts-lao                             0.0.20060226-10ubuntu2                                               all          TrueType font for Lao language
+ii  fonts-lato                            2.0-2.1                                                              all          sans-serif typeface family font
+ii  fonts-lklug-sinhala                   0.6-3.1build1                                                        all          Unicode Sinhala font by Lanka Linux User Group
+ii  fonts-lohit-beng-assamese             2.91.5-2                                                             all          Lohit TrueType font for Assamese Language
+ii  fonts-lohit-beng-bengali              2.91.5-2                                                             all          Lohit TrueType font for Bengali Language
+ii  fonts-lohit-deva                      2.95.4-4                                                             all          Lohit TrueType font for Devanagari script
+ii  fonts-lohit-gujr                      2.92.4-4                                                             all          Lohit TrueType font for Gujarati Language
+ii  fonts-lohit-guru                      2.91.2-2build1                                                       all          Lohit TrueType font for Punjabi Language
+ii  fonts-lohit-knda                      2.5.4-3                                                              all          Lohit TrueType font for Kannada Language
+ii  fonts-lohit-mlym                      2.92.2-2                                                             all          Lohit TrueType font for Malayalam Language
+ii  fonts-lohit-orya                      2.91.2-2                                                             all          Lohit TrueType font for Oriya Language
+ii  fonts-lohit-taml                      2.91.3-2                                                             all          Lohit TrueType font for Tamil Language
+ii  fonts-lohit-taml-classical            2.5.4-2                                                              all          Lohit Tamil TrueType fonts for Tamil script
+ii  fonts-lohit-telu                      2.5.5-2build1                                                        all          Lohit TrueType font for Telugu Language
+ii  fonts-mlym                            2:1.3                                                                all          Meta package to install all Malayalam fonts
+ii  fonts-nakula                          1.0-4                                                                all          Free Unicode compliant Devanagari font
+ii  fonts-navilu                          1.2-3                                                                all          Handwriting font for Kannada
+ii  fonts-noto-cjk                        1:20201206-cjk+repack1-1                                             all          "No Tofu" font families with large Unicode coverage (CJK regular and bold)
+ii  fonts-noto-core                       20201225-1build1                                                     all          "No Tofu" font families with large Unicode coverage (core)
+ii  fonts-orya                            2:1.3                                                                all          Meta package to install all Odia fonts
+ii  fonts-orya-extra                      2.0-6                                                                all          Free fonts for Odia script
+ii  fonts-pagul                           1.0-8                                                                all          Free TrueType font for the Sourashtra language
+ii  fonts-sahadeva                        1.0-5                                                                all          Free Unicode compliant Devanagari font
+ii  fonts-samyak-deva                     1.2.2-5build1                                                        all          Samyak TrueType font for Devanagari script
+ii  fonts-samyak-gujr                     1.2.2-5build1                                                        all          Samyak TrueType font for Gujarati language
+ii  fonts-samyak-mlym                     1.2.2-5build1                                                        all          Samyak TrueType font for Malayalam language
+ii  fonts-samyak-taml                     1.2.2-5build1                                                        all          Samyak TrueType font for Tamil language
+ii  fonts-sarai                           1.0-3                                                                all          truetype font for devanagari script
+ii  fonts-sil-abyssinica                  2.000-1build1                                                        all          Unicode font for the Ethiopic script
+ii  fonts-sil-padauk                      4.000-1build1                                                        all          Burmese Unicode TrueType font with OpenType and Graphite support
+ii  fonts-smc                             1:7.2                                                                all          Metapackage for various TrueType fonts for Malayalam Language
+ii  fonts-smc-anjalioldlipi               7.1.2-2                                                              all          AnjaliOldLipi malayalam font
+ii  fonts-smc-chilanka                    1.530-1                                                              all          Chilanka malayalam font
+ii  fonts-smc-dyuthi                      3.0.2-2                                                              all          Dyuthi malayalam font
+ii  fonts-smc-gayathri                    1.100-2                                                              all          Gayathri Malayalam font
+ii  fonts-smc-karumbi                     1.1.2-2                                                              all          Karumbi malayalam font
+ii  fonts-smc-keraleeyam                  3.0.2-2                                                              all          Keraleeyam malayalam font
+ii  fonts-smc-manjari                     1.920-1                                                              all          Manjari malayalam font
+ii  fonts-smc-meera                       7.0.3-1                                                              all          Meera malayalam font
+ii  fonts-smc-rachana                     7.0.2-1build1                                                        all          Rachana malayalam font
+ii  fonts-smc-raghumalayalamsans          2.2.1-1                                                              all          RaghuMalayalamSans malayalam font
+ii  fonts-smc-suruma                      3.2.3-1                                                              all          Suruma malayalam font
+ii  fonts-smc-uroob                       2.0.2-1                                                              all          Uroob malayalam font
+ii  fonts-symbola                         2.60-1.1                                                             all          symbolic font providing emoji characters from Unicode 9.0
+ii  fonts-taml                            2:1.4                                                                all          Meta package to install all Tamil fonts
+ii  fonts-telu                            2:1.3                                                                all          Meta package to install all Telugu fonts
+ii  fonts-telu-extra                      2.0-5                                                                all          Free fonts for Telugu script
+ii  fonts-teluguvijayam                   2.1-1                                                                all          TrueType fonts for Telugu script (te)
+ii  fonts-tibetan-machine                 1.901b-5.1build1                                                     all          font for Tibetan, Dzongkha and Ladakhi (OpenType Unicode)
+rc  fonts-tlwg-garuda                     1:0.7.2-1build1                                                      all          Thai Garuda font (dependency package)
+rc  fonts-tlwg-kinnari                    1:0.7.2-1build1                                                      all          Thai Kinnari font (dependency package)
+rc  fonts-tlwg-laksaman                   1:0.7.2-1build1                                                      all          Thai Laksaman font (dependency package)
+rc  fonts-tlwg-loma                       1:0.7.2-1build1                                                      all          Thai Loma font (dependency package)
+rc  fonts-tlwg-mono                       1:0.7.2-1build1                                                      all          Thai TlwgMono font (dependency package)
+rc  fonts-tlwg-norasi                     1:0.7.2-1build1                                                      all          Thai Norasi font (dependency package)
+rc  fonts-tlwg-typist                     1:0.7.2-1build1                                                      all          Thai TlwgTypist font (dependency package)
+rc  fonts-tlwg-typo                       1:0.7.2-1build1                                                      all          Thai TlwgTypo font (dependency package)
+rc  fonts-tlwg-umpush                     1:0.7.2-1build1                                                      all          Thai Umpush font (dependency package)
+rc  fonts-tlwg-waree                      1:0.7.2-1build1                                                      all          Thai Waree font (dependency package)
+ii  fonts-urw-base35                      20200910-1                                                           all          font set metric-compatible with the 35 PostScript Level 2 Base Fonts
+ii  fonts-yrsa-rasa                       1.002-3                                                              all          Open-source, libre fonts for Latin + Gujarati
+ii  libwoff1:amd64                        1.0.2-1build2                                                        amd64        library for converting fonts to WOFF 2.0
